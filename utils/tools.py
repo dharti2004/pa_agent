@@ -4,7 +4,7 @@ from typing import List
 from langchain.tools import tool
 from ddgs import DDGS
 
-from utils.rag import semantic_search
+from utils.rag import semantic_search_by_file
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -36,20 +36,21 @@ def web_search(query: str) -> str:
 
 
 @tool
-def semantic_search_qdrant(query: str) -> str:
+def semantic_search_chroma(query: str, user_id: str, file_id: str) -> str:
     """
-    Run semantic search against the vector store and return concatenated chunks.
+    Retrieve relevant snippets from the vector store for the given user_id and file_id.
+    This tool is always file-scoped; pass the file_id returned by /upload.
     """
     try:
-        chunks = semantic_search(query, top_k=5)
+        chunks = semantic_search_by_file(query, user_id=user_id, file_id=file_id, top_k=5)
         if not chunks:
             return "No relevant documents found."
         return "\n\n".join(chunks)
     except Exception as e:
-        logger.error(f"Error in semantic_search_qdrant: {e}", exc_info=True)
+        logger.error(f"Error in semantic_search_chroma: {e}", exc_info=True)
         return f"Error during semantic search: {str(e)}"
 
 
-tools = [web_search, semantic_search_qdrant]
+tools = [web_search, semantic_search_chroma]
 
 tool_map = {t.name: t for t in tools}

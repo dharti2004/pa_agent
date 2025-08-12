@@ -2,13 +2,8 @@ import uvicorn
 import json
 import logging
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
-from typing import Optional
 from fastapi.concurrency import run_in_threadpool
-from pydantic import BaseModel
-
-from memory.finance_profile import FinanceProfile
-from memory.travel_profile import TravelProfile
-from utils.helper import chat, parse_file, get_user_profiles
+from utils.helper import chat, parse_file, get_user_profiles, set_last_file_id, get_last_file_id
 from utils.rag import store_file_embeddings
 
 logging.basicConfig(
@@ -22,11 +17,29 @@ logger = logging.getLogger(__name__)
 app = FastAPI()
 
 
+@app.post("/upload")
+async def upload_endpoint(
+    user_id: str = Form(...),
+    file: UploadFile = File(...),
+):
+    try:
+        file_bytes = await file.read()
+        _ = await run_in_threadpool(parse_file, file_bytes, file.filename)
+        result = await run_in_threadpool(store_file_embeddings, file_bytes, file.filename, user_id, None)
+        file_id = result.get("file_id")
+        if file_id:
+            await run_in_threadpool(set_last_file_id, user_id, file_id)
+        return {"status": "ok", "message": "File ingested to vector store", "file_id": file_id}
+    except Exception as e:
+        logger.error(f"Upload handling error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to process uploaded file")
+
+
 @app.post("/chat")
 async def chat_endpoint(
     user_id: str = Form(...),
     messages: str = Form(...),
-    file: Optional[UploadFile] = File(None),
+    file_id: str = Form("")
 ):
     try:
         messages_list = json.loads(messages)
@@ -35,23 +48,14 @@ async def chat_endpoint(
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid JSON format for 'messages' field.")
 
-    parsed_file_data = ""
-    if file:
-        try:
-            file_bytes = await file.read()
-            parsed_file_data = await run_in_threadpool(parse_file, file_bytes, file.filename)
-            try:
-                await run_in_threadpool(store_file_embeddings, file_bytes, file.filename)
-            except Exception as e:
-                logger.error(f"RAG ingestion failed for uploaded file '{file.filename}': {e}", exc_info=True)
-        except Exception as e:
-            logger.error(f"File handling error: {e}", exc_info=True)
-            raise HTTPException(status_code=500, detail="Failed to process uploaded file")
+    effective_file_id = (file_id or "").strip()
+    if not effective_file_id:
+        effective_file_id = await run_in_threadpool(get_last_file_id, user_id)
 
     graph_input = {
         "messages": messages_list,
         "user_id": user_id,
-        "parsed_file_data": parsed_file_data,
+        "file_id": effective_file_id,
     }
 
     config = {"configurable": {"thread_id": user_id}}
