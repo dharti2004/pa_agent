@@ -1,0 +1,35 @@
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+python-dotenv>=1.0.1
+pydantic>=2.7.0
+
+# LLMs / LangChain / LangGraph
+langchain>=0.2.10
+langgraph>=0.2.36
+langchain-google-genai>=1.0.7
+langchain-huggingface>=0.1.2
+# Optional short-term memory persistence (MongoDB checkpointer)
+langgraph-checkpoint-mongodb>=0.1.0
+
+# Vector DB / Embeddings
+langchain-chroma>=0.1.1
+chromadb>=0.5.5
+sentence-transformers>=3.0.1
+# CPU PyTorch for sentence-transformers (adjust for CUDA if needed)
+torch>=2.3.0
+
+# Parsing
+llama-index>=0.10.0
+llama-parse>=0.4.0
+
+# Tools
+ddgs>=1.9.7
+
+# Database
+pymongo>=4.7.2
+
+# Testing
+pytest>=8.3.1
+pytest-asyncio>=0.23.7
+httpx>=0.27.0
+mongomock>=4.1.2 
