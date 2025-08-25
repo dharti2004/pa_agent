@@ -1,6 +1,129 @@
-# API Endpoints Documentation
 
 This document provides an overview of the available API endpoints in `api.py` and `main.py`.
+
+## Prerequisites
+
+Before running the application, ensure you have the following installed:
+- Python 3.8 or higher
+- pip (Python package installer)
+- MongoDB (for data storage)
+- MongoDB Compass (for database management)
+- Google API key (for Gemini AI model)
+
+## MongoDB Setup
+
+### 1. Install MongoDB Compass
+
+**On Ubuntu/Debian:**
+```bash
+# Download MongoDB Compass
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.40.4_amd64.deb
+
+# Install the package
+sudo dpkg -i mongodb-compass_1.40.4_amd64.deb
+
+# Fix any dependency issues
+sudo apt-get install -f
+```
+
+**On macOS:**
+```bash
+# Using Homebrew
+brew install --cask mongodb-compass
+
+# Or download from official website
+# https://www.mongodb.com/try/download/compass
+```
+
+**On Windows:**
+```bash
+# Using Chocolatey
+choco install mongodb-compass
+
+# Or download from official website
+# https://www.mongodb.com/try/download/compass
+```
+
+### 2. Set up MongoDB Connection
+
+1. **Open MongoDB Compass**
+2. **Click "New Connection"**
+3. **Enter your connection string:**
+4. **Click "Connect"**
+
+### 3. Create Database and Collections
+
+1. **Create Database:**
+   - Click "Create Database"
+   - Database Name: `finpal_db`
+   - Collection Name: `finance_profiles`
+   - Click "Create Database"
+
+2. **Create Additional Collection:**
+   - In the `finpal_db` database, click "Create Collection"
+   - Collection Name: `finance_memory`
+   - Click "Create Collection"
+
+### 4. Import Data to finance_profiles Collection
+
+1. **Select the `finance_profiles` collection**
+2. **Click "Add Data" → "Import File"**
+3. **Choose your data file (JSON, CSV, etc.)**
+4. **Configure import settings and click "Import"**
+
+
+## Installation
+
+1. **Clone the repository and navigate to the project directory:**
+   ```bash
+   cd /home/desk0046/Documents/pa_agent
+   ```
+
+2. **Create and activate a virtual environment:**
+   ```bash
+   python -m venv env
+   source env/bin/activate  # On Windows: env\Scripts\activate
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set up environment variables:**
+   Create a `.env` file in the project root with the following variables:
+   ```env
+   MONGO_URI= your MongoDB connection string with authentication
+   DATABASE_NAME=your Database name
+   COLLECTION_NAME= finance_profiles
+   TARGET_COLLECTION_NAME= finance_memory
+   GOOGLE_API_KEY=your_google_api_key
+   ```
+
+## Usage
+
+### Running the API Server (api.py)
+To start the suggestions API server:
+```bash
+python api.py
+```
+This will start the server on `http://localhost:8000` and provides endpoints for:
+- Building user financial memory
+- Generating financial suggestions
+- Health checks
+
+### Running the Main Application (main.py)
+To start the financial assistant chat application:
+```bash
+python main.py
+```
+This will start the server on `http://localhost:8000` and provides endpoints for:
+- File uploads and processing
+- Chat with financial assistant
+- User memory management
+- Finance profile processing
+
+**Note:** Both applications run on port 8000, so you can only run one at a time.
 
 ## `api.py` Endpoints
 
