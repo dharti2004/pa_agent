@@ -1,9 +1,14 @@
+from typing import List, Optional
+
 import uvicorn
 import json
 import logging
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
 from fastapi.concurrency import run_in_threadpool
-from utils.helper import chat, parse_file, get_user_profiles, set_last_file_id, get_last_file_id
+from utils.helper import (
+    chat, parse_file, get_user_profiles, set_last_file_id, get_last_file_id,
+    get_finance_source_collection, process_finance_profile_data, generate_finance_suggestions
+)
 from utils.rag import store_file_embeddings
 
 logging.basicConfig(
@@ -79,6 +84,35 @@ async def get_user_memory(user_id: str):
     except Exception as e:
         logger.error(f"Error getting user memory for {user_id}: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail="Failed to fetch user memory")
+
+@app.post("/process-finance-profiles/{user_id}")
+async def process_finance_profiles_endpoint(user_id: str):
+    try:
+        source_col = get_finance_source_collection()
+        user_doc = source_col.find_one({"user_id": user_id})
+        if not user_doc:
+            raise HTTPException(status_code=404, detail=f"No finance profile found for user_id: {user_id}")
+        
+        await run_in_threadpool(process_finance_profile_data, user_doc)
+        return {"status": "ok", "message": f"Finance profile for {user_id} processed and updated."}
+    except HTTPException as http_exc:
+        raise http_exc
+    except Exception as e:
+        logger.error(f"Error processing finance profile for {user_id}: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to process finance profile")
+
+@app.get("/suggestions/{user_id}")
+async def get_finance_suggestions_endpoint(user_id: str):
+    try:
+        suggestions = await run_in_threadpool(generate_finance_suggestions, user_id)
+        if not suggestions:
+            raise HTTPException(status_code=404, detail=f"No suggestions found for user_id: {user_id}")
+        return suggestions
+    except HTTPException as http_exc:
+        raise http_exc
+    except Exception as e:
+        logger.error(f"Error getting finance suggestions for {user_id}: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to fetch finance suggestions")
 
 
 if __name__ == "__main__":

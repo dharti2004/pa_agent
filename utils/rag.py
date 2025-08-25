@@ -118,7 +118,6 @@ def semantic_search_by_file(query: str, user_id: Optional[str], file_id: str, to
     """Search limited to one file_id (and optional user_id) via metadata filter."""
     try:
         vs = _get_vectorstore()
-        # Build Chroma where filter using operator-based syntax
         if user_id:
             filt = {"$and": [{"file_id": {"$eq": file_id}}, {"user_id": {"$eq": user_id}}]}
         else:

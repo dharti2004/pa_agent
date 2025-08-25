@@ -20,7 +20,7 @@ class FinanceProfile(BaseModel):
     income_from_business: Optional[Decimal] = None
     income_from_investments: Optional[Decimal] = None
     income_from_rental: Optional[Decimal] = None
-    income_other_sources: Optional[str] = None
+    income_other_sources: Optional[Decimal] = None
     
     # Expenses - "What are your monthly expenses?"
     expense_total_monthly: Optional[Decimal] = None

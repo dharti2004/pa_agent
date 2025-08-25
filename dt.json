@@ -1,0 +1,444 @@
+[
+  {
+    "Person": {
+      "PersonID": 1,
+      "LastName": "Sharma",
+      "FirstName": "Amit",
+      "DateOfBirth": "1985-06-15",
+      "Email": "amit.sharma@example.com",
+      "PhoneNumber": "+91-9876543210",
+      "Address": "45 MG Road, Bengaluru, India",
+      "TaxIdentifier": "INPAN1234A"
+    },
+    "Customer": {
+      "CustomerID": 1,
+      "CustomerType": "Premium"
+    },
+    "Branch": {
+      "BranchID": 101,
+      "BranchName": "Bengaluru Main",
+      "BranchCode": "BNG001",
+      "Address": "45 MG Road, Bengaluru, India",
+      "PhoneNumber": "+91-9876500000"
+    },
+    "Employee": {
+      "EmployeeID": 501,
+      "Position": "Relationship Manager"
+    },
+    "Account": {
+      "AccountID": 1001,
+      "AccountNumber": "SB1000001234",
+      "AccountType": "Savings",
+      "CurrentBalance": 345000.50,
+      "DateOpened": "2015-04-20",
+      "DateClosed": null,
+      "AccountStatus": "Active"
+    },
+    "Transfer": [
+      {
+        "TransferID": 1,
+        "Amount": 50000.00,
+        "occurrenceTime": "2024-06-15T10:15:00"
+      },
+      {
+        "TransferID": 2,
+        "Amount": 15000.00,
+        "occurrenceTime": "2024-07-05T14:20:00"
+      },
+      {
+        "TransferID": 3,
+        "Amount": 75000.00,
+        "occurrenceTime": "2024-09-10T09:45:00"
+      }
+    ],
+    "Transaction": [
+      { "TransactionID": 1, "TransactionType": "Credit", "Amount": 100000.00, "TransactionDate": "2024-01-05T09:10:00" },
+      { "TransactionID": 2, "TransactionType": "Debit", "Amount": 1500.00, "TransactionDate": "2024-01-06T18:20:00" },
+      { "TransactionID": 3, "TransactionType": "Debit", "Amount": 2500.00, "TransactionDate": "2024-01-07T12:30:00" },
+      { "TransactionID": 4, "TransactionType": "Credit", "Amount": 50000.00, "TransactionDate": "2024-01-10T11:00:00" },
+      { "TransactionID": 5, "TransactionType": "Debit", "Amount": 800.00, "TransactionDate": "2024-01-12T19:45:00" },
+      { "TransactionID": 6, "TransactionType": "Debit", "Amount": 5600.00, "TransactionDate": "2024-01-15T10:00:00" },
+      { "TransactionID": 7, "TransactionType": "Credit", "Amount": 45000.00, "TransactionDate": "2024-01-20T14:10:00" },
+      { "TransactionID": 8, "TransactionType": "Debit", "Amount": 9000.00, "TransactionDate": "2024-01-21T16:30:00" },
+      { "TransactionID": 9, "TransactionType": "Debit", "Amount": 3200.00, "TransactionDate": "2024-01-25T08:50:00" },
+      { "TransactionID": 10, "TransactionType": "Debit", "Amount": 15000.00, "TransactionDate": "2024-02-01T09:00:00" },
+      { "TransactionID": 11, "TransactionType": "Credit", "Amount": 75000.00, "TransactionDate": "2024-02-10T11:20:00" },
+      { "TransactionID": 12, "TransactionType": "Debit", "Amount": 2000.00, "TransactionDate": "2024-02-12T12:15:00" },
+      { "TransactionID": 13, "TransactionType": "Debit", "Amount": 1800.00, "TransactionDate": "2024-02-15T18:45:00" },
+      { "TransactionID": 14, "TransactionType": "Debit", "Amount": 30000.00, "TransactionDate": "2024-02-20T15:10:00" },
+      { "TransactionID": 15, "TransactionType": "Credit", "Amount": 90000.00, "TransactionDate": "2024-02-25T10:00:00" },
+      { "TransactionID": 16, "TransactionType": "Debit", "Amount": 4500.00, "TransactionDate": "2024-02-27T13:30:00" },
+      { "TransactionID": 17, "TransactionType": "Debit", "Amount": 550.00, "TransactionDate": "2024-03-01T09:15:00" },
+      { "TransactionID": 18, "TransactionType": "Debit", "Amount": 1800.00, "TransactionDate": "2024-03-03T20:00:00" },
+      { "TransactionID": 19, "TransactionType": "Credit", "Amount": 120000.00, "TransactionDate": "2024-03-05T08:45:00" },
+      { "TransactionID": 20, "TransactionType": "Debit", "Amount": 25000.00, "TransactionDate": "2024-03-07T12:00:00" },
+      { "TransactionID": 21, "TransactionType": "Debit", "Amount": 6700.00, "TransactionDate": "2024-03-09T17:30:00" },
+      { "TransactionID": 22, "TransactionType": "Credit", "Amount": 95000.00, "TransactionDate": "2024-03-12T10:30:00" },
+      { "TransactionID": 23, "TransactionType": "Debit", "Amount": 1200.00, "TransactionDate": "2024-03-13T14:45:00" },
+      { "TransactionID": 24, "TransactionType": "Debit", "Amount": 6000.00, "TransactionDate": "2024-03-15T19:20:00" },
+      { "TransactionID": 25, "TransactionType": "Debit", "Amount": 1800.00, "TransactionDate": "2024-03-18T11:00:00" },
+      { "TransactionID": 26, "TransactionType": "Credit", "Amount": 120000.00, "TransactionDate": "2024-03-25T09:15:00" },
+      { "TransactionID": 27, "TransactionType": "Debit", "Amount": 35000.00, "TransactionDate": "2024-03-27T15:40:00" },
+      { "TransactionID": 28, "TransactionType": "Debit", "Amount": 2000.00, "TransactionDate": "2024-04-01T13:10:00" },
+      { "TransactionID": 29, "TransactionType": "Debit", "Amount": 9000.00, "TransactionDate": "2024-04-03T16:25:00" },
+      { "TransactionID": 30, "TransactionType": "Credit", "Amount": 75000.00, "TransactionDate": "2024-04-05T10:05:00" },
+      { "TransactionID": 31, "TransactionType": "Debit", "Amount": 1450.00, "TransactionDate": "2024-04-08T18:50:00" },
+      { "TransactionID": 32, "TransactionType": "Debit", "Amount": 4800.00, "TransactionDate": "2024-04-12T09:30:00" },
+      { "TransactionID": 33, "TransactionType": "Debit", "Amount": 30000.00, "TransactionDate": "2024-04-15T12:40:00" },
+      { "TransactionID": 34, "TransactionType": "Credit", "Amount": 95000.00, "TransactionDate": "2024-04-25T10:15:00" },
+      { "TransactionID": 35, "TransactionType": "Debit", "Amount": 5600.00, "TransactionDate": "2024-05-02T17:00:00" },
+      { "TransactionID": 36, "TransactionType": "Debit", "Amount": 2100.00, "TransactionDate": "2024-05-05T09:25:00" },
+      { "TransactionID": 37, "TransactionType": "Credit", "Amount": 120000.00, "TransactionDate": "2024-05-07T11:10:00" },
+      { "TransactionID": 38, "TransactionType": "Debit", "Amount": 850.00, "TransactionDate": "2024-05-10T19:45:00" },
+      { "TransactionID": 39, "TransactionType": "Debit", "Amount": 27000.00, "TransactionDate": "2024-05-14T15:55:00" },
+      { "TransactionID": 40, "TransactionType": "Debit", "Amount": 6400.00, "TransactionDate": "2024-05-20T14:35:00" },
+      { "TransactionID": 41, "TransactionType": "Credit", "Amount": 80000.00, "TransactionDate": "2024-05-25T09:50:00" },
+      { "TransactionID": 42, "TransactionType": "Debit", "Amount": 1200.00, "TransactionDate": "2024-06-01T16:15:00" },
+      { "TransactionID": 43, "TransactionType": "Debit", "Amount": 9800.00, "TransactionDate": "2024-06-04T11:25:00" },
+      { "TransactionID": 44, "TransactionType": "Credit", "Amount": 115000.00, "TransactionDate": "2024-06-06T09:40:00" },
+      { "TransactionID": 45, "TransactionType": "Debit", "Amount": 3500.00, "TransactionDate": "2024-06-10T18:05:00" },
+      { "TransactionID": 46, "TransactionType": "Debit", "Amount": 15000.00, "TransactionDate": "2024-06-15T10:20:00" },
+      { "TransactionID": 47, "TransactionType": "Credit", "Amount": 90000.00, "TransactionDate": "2024-06-20T08:55:00" },
+      { "TransactionID": 48, "TransactionType": "Debit", "Amount": 2200.00, "TransactionDate": "2024-06-25T12:30:00" }
+    ],
+    "Loan": {
+      "LoanID": 301,
+      "LoanType": "Home Loan",
+      "LoanAmount": 5000000.00,
+      "InterestRate": 7.5,
+      "Term": "20 years",
+      "StartDate": "2020-05-15",
+      "EndDate": "2040-05-15",
+      "LoanStatus": "Active"
+    },
+    "LoanPayment": [
+      {
+        "LoanPaymentID": 1,
+        "ScheduledPaymentDate": "2024-01-15",
+        "PaymentAmount": 35000.00,
+        "PrincipalAmount": 15000.00,
+        "InterestAmount": 20000.00
+      },
+      {
+        "LoanPaymentID": 2,
+        "ScheduledPaymentDate": "2024-02-15",
+        "PaymentAmount": 35000.00,
+        "PrincipalAmount": 15200.00,
+        "InterestAmount": 19800.00
+      },
+      {
+        "LoanPaymentID": 3,
+        "ScheduledPaymentDate": "2024-03-15",
+        "PaymentAmount": 35000.00,
+        "PrincipalAmount": 15400.00,
+        "InterestAmount": 19600.00
+      }
+    ]
+  },
+  {
+    "Person": {
+      "PersonID": 2,
+      "LastName": "Patel",
+      "FirstName": "Neha",
+      "DateOfBirth": "1990-09-22",
+      "Email": "neha.patel@example.com",
+      "PhoneNumber": "+91-9823456789",
+      "Address": "12 Law Garden Road, Ahmedabad, India",
+      "TaxIdentifier": "INPAN5678B"
+    },
+    "Customer": {
+      "CustomerID": 2,
+      "CustomerType": "Gold"
+    },
+    "Branch": {
+      "BranchID": 102,
+      "BranchName": "Ahmedabad Central",
+      "BranchCode": "AMD002",
+      "Address": "12 Law Garden Road, Ahmedabad, India",
+      "PhoneNumber": "+91-9823000000"
+    },
+    "Employee": {
+      "EmployeeID": 502,
+      "Position": "Account Manager"
+    },
+    "Account": {
+      "AccountID": 1002,
+      "AccountNumber": "SB1000005678",
+      "AccountType": "Current",
+      "CurrentBalance": 125000.75,
+      "DateOpened": "2018-06-10",
+      "DateClosed": null,
+      "AccountStatus": "Active"
+    },
+    "Transfer": [
+      {
+        "TransferID": 4,
+        "Amount": 25000.00,
+        "occurrenceTime": "2024-06-20T11:45:00"
+      },
+      {
+        "TransferID": 5,
+        "Amount": 12000.00,
+        "occurrenceTime": "2024-07-15T09:30:00"
+      }
+    ],
+    "Transaction": [
+      {
+        "TransactionID": 49,
+        "TransactionType": "Credit",
+        "Amount": 60000.00,
+        "TransactionDate": "2024-01-03T10:10:00"
+      },
+      {
+        "TransactionID": 50,
+        "TransactionType": "Debit",
+        "Amount": 2200.00,
+        "TransactionDate": "2024-01-05T15:20:00"
+      },
+      {
+        "TransactionID": 51,
+        "TransactionType": "Credit",
+        "Amount": 80000.00,
+        "TransactionDate": "2024-02-10T14:00:00"
+      },
+      {
+        "TransactionID": 52,
+        "TransactionType": "Debit",
+        "Amount": 1500.00,
+        "TransactionDate": "2024-02-15T11:25:00"
+      },
+      {
+        "TransactionID": 53,
+        "TransactionType": "Debit",
+        "Amount": 9500.00,
+        "TransactionDate": "2024-03-05T17:30:00"
+      }
+    ],
+    "Loan": {
+      "LoanID": 302,
+      "LoanType": "Car Loan",
+      "LoanAmount": 1200000.00,
+      "InterestRate": 8.0,
+      "Term": "5 years",
+      "StartDate": "2021-08-01",
+      "EndDate": "2026-08-01",
+      "LoanStatus": "Active"
+    },
+    "LoanPayment": [
+      {
+        "LoanPaymentID": 4,
+        "ScheduledPaymentDate": "2024-01-10",
+        "PaymentAmount": 25000.00,
+        "PrincipalAmount": 12000.00,
+        "InterestAmount": 13000.00
+      },
+      {
+        "LoanPaymentID": 5,
+        "ScheduledPaymentDate": "2024-02-10",
+        "PaymentAmount": 25000.00,
+        "PrincipalAmount": 12150.00,
+        "InterestAmount": 12850.00
+      }
+    ]
+  },
+  {
+    "Person": {
+      "PersonID": 3,
+      "LastName": "Khan",
+      "FirstName": "Imran",
+      "DateOfBirth": "1978-03-12",
+      "Email": "imran.khan@example.com",
+      "PhoneNumber": "+91-9812345678",
+      "Address": "56 MG Road, Pune, India",
+      "TaxIdentifier": "INPAN9012C"
+    },
+    "Customer": {
+      "CustomerID": 3,
+      "CustomerType": "Platinum"
+    },
+    "Branch": {
+      "BranchID": 103,
+      "BranchName": "Pune East",
+      "BranchCode": "PNE003",
+      "Address": "56 MG Road, Pune, India",
+      "PhoneNumber": "+91-9812000000"
+    },
+    "Employee": {
+      "EmployeeID": 503,
+      "Position": "Wealth Advisor"
+    },
+    "Account": {
+      "AccountID": 1003,
+      "AccountNumber": "SB1000009012",
+      "AccountType": "Savings",
+      "CurrentBalance": 950000.00,
+      "DateOpened": "2012-11-05",
+      "DateClosed": null,
+      "AccountStatus": "Active"
+    },
+    "Transfer": [
+      {
+        "TransferID": 6,
+        "Amount": 100000.00,
+        "occurrenceTime": "2024-06-25T12:10:00"
+      },
+      {
+        "TransferID": 7,
+        "Amount": 50000.00,
+        "occurrenceTime": "2024-07-12T14:45:00"
+      }
+    ],
+    "Transaction": [
+      {
+        "TransactionID": 54,
+        "TransactionType": "Credit",
+        "Amount": 150000.00,
+        "TransactionDate": "2024-01-08T09:50:00"
+      },
+      {
+        "TransactionID": 55,
+        "TransactionType": "Debit",
+        "Amount": 5500.00,
+        "TransactionDate": "2024-01-10T10:30:00"
+      },
+      {
+        "TransactionID": 56,
+        "TransactionType": "Credit",
+        "Amount": 175000.00,
+        "TransactionDate": "2024-02-14T12:15:00"
+      },
+      {
+        "TransactionID": 57,
+        "TransactionType": "Debit",
+        "Amount": 12000.00,
+        "TransactionDate": "2024-02-20T18:25:00"
+      }
+    ],
+    "Loan": {
+      "LoanID": 303,
+      "LoanType": "Business Loan",
+      "LoanAmount": 2500000.00,
+      "InterestRate": 9.0,
+      "Term": "10 years",
+      "StartDate": "2019-04-10",
+      "EndDate": "2029-04-10",
+      "LoanStatus": "Active"
+    },
+    "LoanPayment": [
+      {
+        "LoanPaymentID": 6,
+        "ScheduledPaymentDate": "2024-01-20",
+        "PaymentAmount": 50000.00,
+        "PrincipalAmount": 25000.00,
+        "InterestAmount": 25000.00
+      },
+      {
+        "LoanPaymentID": 7,
+        "ScheduledPaymentDate": "2024-02-20",
+        "PaymentAmount": 50000.00,
+        "PrincipalAmount": 25200.00,
+        "InterestAmount": 24800.00
+      }
+    ]
+  },
+  {
+    "Person": {
+      "PersonID": 4,
+      "LastName": "Rao",
+      "FirstName": "Priya",
+      "DateOfBirth": "1995-12-05",
+      "Email": "priya.rao@example.com",
+      "PhoneNumber": "+91-9801234567",
+      "Address": "89 Jubilee Hills, Hyderabad, India",
+      "TaxIdentifier": "INPAN3456D"
+    },
+    "Customer": {
+      "CustomerID": 4,
+      "CustomerType": "Silver"
+    },
+    "Branch": {
+      "BranchID": 104,
+      "BranchName": "Hyderabad South",
+      "BranchCode": "HYD004",
+      "Address": "89 Jubilee Hills, Hyderabad, India",
+      "PhoneNumber": "+91-9801000000"
+    },
+    "Employee": {
+      "EmployeeID": 504,
+      "Position": "Customer Service Officer"
+    },
+    "Account": {
+      "AccountID": 1004,
+      "AccountNumber": "SB1000003456",
+      "AccountType": "Savings",
+      "CurrentBalance": 78500.25,
+      "DateOpened": "2021-01-15",
+      "DateClosed": null,
+      "AccountStatus": "Active"
+    },
+    "Transfer": [
+      {
+        "TransferID": 8,
+        "Amount": 8000.00,
+        "occurrenceTime": "2024-06-10T08:50:00"
+      },
+      {
+        "TransferID": 9,
+        "Amount": 4500.00,
+        "occurrenceTime": "2024-07-01T16:20:00"
+      }
+    ],
+    "Transaction": [
+      {
+        "TransactionID": 58,
+        "TransactionType": "Credit",
+        "Amount": 25000.00,
+        "TransactionDate": "2024-01-15T09:40:00"
+      },
+      {
+        "TransactionID": 59,
+        "TransactionType": "Debit",
+        "Amount": 1200.00,
+        "TransactionDate": "2024-01-17T11:00:00"
+      },
+      {
+        "TransactionID": 60,
+        "TransactionType": "Credit",
+        "Amount": 30000.00,
+        "TransactionDate": "2024-02-05T12:15:00"
+      },
+      {
+        "TransactionID": 61,
+        "TransactionType": "Debit",
+        "Amount": 3500.00,
+        "TransactionDate": "2024-02-08T17:35:00"
+      }
+    ],
+    "Loan": {
+      "LoanID": 304,
+      "LoanType": "Education Loan",
+      "LoanAmount": 800000.00,
+      "InterestRate": 6.5,
+      "Term": "7 years",
+      "StartDate": "2022-02-01",
+      "EndDate": "2029-02-01",
+      "LoanStatus": "Active"
+    },
+    "LoanPayment": [
+      {
+        "LoanPaymentID": 8,
+        "ScheduledPaymentDate": "2024-01-12",
+        "PaymentAmount": 15000.00,
+        "PrincipalAmount": 7000.00,
+        "InterestAmount": 8000.00
+      },
+      {
+        "LoanPaymentID": 9,
+        "ScheduledPaymentDate": "2024-02-12",
+        "PaymentAmount": 15000.00,
+        "PrincipalAmount": 7100.00,
+        "InterestAmount": 7900.00
+      }
+    ]
+  }
+]
